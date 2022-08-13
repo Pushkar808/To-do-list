@@ -1,0 +1,27 @@
+{
+  "name": "to-do-list-node",
+  "version": "1.0.0",
+  "description": "to do list with storing list in DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pushkar Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pushkar808/To-do-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pushkar808/To-do-list/issues"
+  },
+  "homepage": "https://github.com/Pushkar808/To-do-list#readme"
+}
