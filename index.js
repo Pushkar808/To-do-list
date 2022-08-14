@@ -18,6 +18,8 @@ app.use('/',require('./routes'));
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 
+   
+
 
 app.listen(port, (err) => {
     if (err)
