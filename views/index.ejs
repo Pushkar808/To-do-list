@@ -1,0 +1,49 @@
+<script src="https://kit.fontawesome.com/4c8d21ec57.js" crossorigin="anonymous"></script>
+< <div id="container">
+    <header>
+        <h4>TODO App</h4>
+    </header>
+    <main id="main">
+        <!-- Description section -->
+        <section id="Description">
+            <div id="label"><label for="desc_input">DESCRIPTION</label></div>
+            <textarea type="text" id="desc_input" placeholder="What do you need to do?"></textarea>
+        </section>
+        <!-- Category Section -->
+        <section id="Category">
+            <div id="label"><label>CATEGORY</label></div>
+            <select id="Category_list" required>
+
+                <option value="" selected disabled hidden>Choose a category</option>
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="school">School</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="others">Others</option>
+                
+            </select>
+        </section>
+        <!-- due date -->
+        <section id="DueDate">
+            <div id="label"><label>DUE DATE</label></div>
+            <input type="date" id="due-date">
+        </section>
+        <hr>
+        <section id="Buttons">
+            <div id="Add-task"><button type="button" class="button-style"><i class="fa-solid fa-plus"></i> Add Task</button></div>
+            <div id="Delete-task"><button type="button" class="button-style"><i class="fa-solid fa-trash"></i> Delete Task</button></div>
+        </section>
+        <hr>
+        <section id="Todo-list">
+            <div id="todo-item">
+                <div id="todo-info-container">
+                    <div id="todo-checkbox"><input type="checkbox"></div>
+                    <div id="todo-descr">This is sample item</div>   
+                    <div class="category" id="school">School</div>
+                </div>
+                <div id="todo-date"><i class="fa-solid fa-calendar"></i> May 2,2019</div>
+            </div>
+            <hr>
+        </section>
+    </main>
+</div>

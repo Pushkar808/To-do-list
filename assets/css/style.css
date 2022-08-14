@@ -1,3 +1,130 @@
 body{
-    background-color: blue;
+    background-color: grey;
+}
+#container{
+    background-color:white;
+    width:50%;
+    margin:0px 25%;
+    padding:10px;
+}
+hr{
+    margin:0;
+}
+h4{
+    font-size:25px;
+}
+header{
+    padding:1px 0px;
+    position:relative;
+    text-align: center;
+}
+
+/* description section */
+#Description{
+    padding:0px 10px;
+    border-top:1px solid rgb(131, 131, 131);
+    border-bottom:1px solid rgb(131, 131, 131);
+}
+#label{
+    font-size:15px;
+    margin:5px 0px;
+}
+#desc_input{
+    width:100%;
+    height:80px;
+    border:0;
+    padding:5px;
+    resize: none;
+}
+#desc_input:focus{
+    outline: none;
+ }
+ /* category section */
+
+ #Category{
+    position:relative;
+    display: inline-block;
+    width: 50%;
+    border-right: 1px solid rgb(131, 131, 131);
+    padding: 0px 10px;
+ }
+#Category_list{
+    width:100%;
+    border:none;
+    outline:none;
+    font-size:15px;
+    margin:10px 0px;
+}
+
+/* due date section */
+#DueDate{
+    display:inline-block;
+    width:43%;  
+}
+#due-date{
+    outline: none;
+    border: none;
+    font-size:17px;
+    font-style: normal;
+    margin-bottom:9px;
+}
+/*buttons*/
+#Buttons{
+    padding:50px;
+    display: flex;
+    justify-content: center;
+}
+#Add-task button{
+    background-color:rgb(46, 43, 43);
+    color:white;
+}
+
+#Delete-task button{
+    background-color:rgb(228, 28, 28);
+    color:white;
+}
+.button-style{
+    font-size:20px;
+    width:200px;
+    height:60px;
+    border:none;
+    text-decoration:none;
+    cursor: pointer;
+}   
+.button-style:hover{
+    box-shadow:black 1px 1px 1px;
+}   
+
+/* main todo list */
+#todo-item{
+    padding:10px;
+}
+#todo-checkbox input{
+    width:20px;
+    height:20px;
+}
+#todo-info-container{
+    margin-top:5px;
+    display:flex;
+    align-items:baseline;
+}
+#todo-descr{
+    font-size:25px;
+    width:80%; /*so that category can fit */
+    margin-left:30px;
+}
+#todo-date{
+    color:rgb(156, 156, 156);
+    margin:10px 50px;
+}
+
+/* categories classes */
+.category{
+    width:auto;
+    font-size:18px;
+    text-align: center;
+    padding:10px;
+    }
+#school{/*set it with js*/
+    background-color:yellowgreen ;
 }
