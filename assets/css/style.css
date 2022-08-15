@@ -120,11 +120,25 @@ header{
 
 /* categories classes */
 .category{
-    width:auto;
+    width:100px;
     font-size:18px;
     text-align: center;
     padding:10px;
+    text-transform: capitalize;
+    border-radius:5px;
     }
-#school{/*set it with js*/
+#personal{
+    background-color: lightcoral ;
+}
+#work{
+    background-color: rosybrown ;
+}
+#school{
     background-color:yellowgreen ;
+}
+#cleaning{
+    background-color:palevioletred ;
+}
+#others{
+    background-color:lightgrey ;
 }

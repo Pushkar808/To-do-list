@@ -8,7 +8,7 @@
         <!-- Description section -->
         <section id="Description">
             <div id="label"><label for="desc_input">DESCRIPTION</label></div>
-            <textarea type="text" id="desc_input" name="description" placeholder="What do you need to do?"></textarea>
+            <textarea type="text" id="desc_input" name="description" placeholder="What do you need to do?" required></textarea>
         </section>
         <!-- Category Section -->
         <section id="Category">
@@ -27,7 +27,7 @@
         <!-- due date -->
         <section id="DueDate">
             <div id="label"><label>DUE DATE</label></div>
-            <input type="date" id="due-date" name="dueDate"> 
+            <input type="date" id="due-date" name="dueDate" required> 
         </section>
         <hr>
         <section id="Buttons">
@@ -37,14 +37,16 @@
     </form>
         <hr>
         <section id="Todo-list">
+            <% for(let i of list) {%>
             <div id="todo-item">
                 <div id="todo-info-container">
-                    <div id="todo-checkbox"><input type="checkbox"></div>
-                    <div id="todo-descr">This is sample item</div>   
-                    <div class="category" id="school">School</div>
+                    <div id="todo-checkbox" name="<%= i.id %>"><input type="checkbox"></div>
+                    <div id="todo-descr"><%= i.Description %></div>
+                    <div class="category" id="<%= i.Category %>"><%= i.Category %></div>
                 </div>
-                <div id="todo-date"><i class="fa-solid fa-calendar"></i> May 2,2019</div>
+                <div id="todo-date"><i class="fa-solid fa-calendar"></i> <%= i.Due_Date %></div>
             </div>
+            <% } %>  
             <hr>
         </section>
     </main>
