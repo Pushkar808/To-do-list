@@ -1,4 +1,5 @@
 console.log("JS LOADED")
+
 const delete_button = document.querySelector('#Delete-task button');//delete button
 
 function getCompletedTask() {//function to get all the tasks that has been checked by the user
@@ -18,7 +19,9 @@ function getCompletedTask() {//function to get all the tasks that has been check
 
 delete_button.addEventListener('click', () => {
    const CompletedTasks=getCompletedTask(); //geting completed tasks
-   let url="/delete/?"//redirecting url to /delete
+   //here we are using dummy so that it always comes like [['dummy',id1,id2..]] as for 1 value it sent only value not as an array 
+   //we can also use it to see whether nothing was selected or not
+   let url="/delete/?id=dummy&"//redirecting url to /delete
    for(let eachTask of CompletedTasks){
         url+="id="+eachTask+"&"; //adding variables inside the url
    }
