@@ -4,7 +4,7 @@
   Basic to-do-list with nodejs support 
   
 # Feature
-  This will create a to-do list with due date ,description and category and all this data will be sent and saved directly to the DB which is basically a MongoDB
+  This will create a to-do list with due date ,description and category and all this data will be sent and saved directly to the DB which is basically a MongoDB. It has proper validations also like you can't add due date before today's date and so on.
   
 # Requirements
   To run the this project we should have following requirements: 
