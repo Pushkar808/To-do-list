@@ -1,4 +1,5 @@
 <script src="https://kit.fontawesome.com/4c8d21ec57.js" crossorigin="anonymous"></script>
+<script src="../assets/javascript/script.js"></script>
 <div id="container">
     <header>
         <h4>TODO App</h4>
@@ -36,11 +37,12 @@
         </section>
     </form>
         <hr>
+        <!-- ejs part -->
         <section id="Todo-list">
             <% for(let i of list) {%>
             <div id="todo-item">
                 <div id="todo-info-container">
-                    <div id="todo-checkbox" name="<%= i.id %>"><input type="checkbox"></div>
+                    <div id="todo-checkbox"><input type="checkbox" name="<%= i.id %>"></div>
                     <div id="todo-descr"><%= i.Description %></div>
                     <div class="category" id="<%= i.Category %>"><%= i.Category %></div>
                 </div>

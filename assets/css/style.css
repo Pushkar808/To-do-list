@@ -127,17 +127,18 @@ header{
     text-transform: capitalize;
     border-radius:5px;
     }
+/*defining seperate color for each category*/
 #personal{
     background-color: lightcoral ;
 }
 #work{
-    background-color: rosybrown ;
+    background-color: teal ;
 }
 #school{
     background-color:yellowgreen ;
 }
 #cleaning{
-    background-color:palevioletred ;
+    background-color: lightslategrey ;
 }
 #others{
     background-color:lightgrey ;

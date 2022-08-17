@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const index_controller = require('../controller/index_controller')
-const TodoSchema = require('../models/schema.js')
+const TodoSchema = require('../models/schema.js')//schema of our table or can say our DB refernce
+const alert=require('alert')//for alert messages in node
 console.log('router loaded');
 
 //routing our '/' request to our index_controller
@@ -10,17 +11,22 @@ router.get('/', index_controller.index_control)
 //add task router
 router.get('/addtask', (req, res) => {
     //formatting date
-    let date=new Date(req.query.dueDate);
-    let MonthsName=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-    let mm=MonthsName[date.getMonth()];
-    let dd=date.getDate();
-    let yyyy=date.getFullYear();
-    
+    var todaydate = new Date();
+    let date = new Date(req.query.dueDate);
+    if(todaydate>date){//if due date is smaller than today date
+        alert("Due Date cannot be smaller than today's date");
+        return res.redirect('back');
+    }
+    let MonthsName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    let mm = MonthsName[date.getMonth()];
+    let dd = date.getDate();
+    let yyyy = date.getFullYear();
+
     //inserting data to the mongo db specified in models/schema.js
     TodoSchema.create({
         Description: req.query.description,
         Category: req.query.category,
-        Due_Date: mm+" "+dd+", "+yyyy
+        Due_Date: mm + " " + dd + ", " + yyyy//making desired format of date 
     }, function (err, u) {
         if (err) {
             console.log("Some error:" + err)
@@ -29,6 +35,29 @@ router.get('/addtask', (req, res) => {
         console.log("data inserted to DB");
         return res.redirect('back');
     });
+})
+
+
+//delete task router
+router.get('/delete', (req, res) => {
+    //here the url has been made by the assets/javascript/script.js and redirect it to /delete/id=""&id=""
+    let id = [];//so that for single id it behave as a single entity in foreach loop
+    id.push(req.query.id);//pushing all the id's that are checked by the user
+    for (let eachid of id) {
+        console.log(eachid);
+        if (eachid == undefined){//if nothing was selected
+            alert("There is no completed task");
+            return res.redirect('back');
+        }
+        //finding and deleting the id
+        TodoSchema.findByIdAndDelete(eachid, (err) => {
+            if (err) {
+                console.log("Some error occurred in deleting");
+                return;
+            }
+        })
+    }
+    return res.redirect('back');
 })
 
 module.exports = router;
